@@ -1,3 +1,5 @@
+/* GENERAL */
+
 *{
     box-sizing: border-box;
 }
@@ -13,11 +15,14 @@ h2{
     margin: 0.8em auto;
 }
 
-.colors{
+section{
     border:2px solid gray;
     padding: 0.8em;
-
+    margin: 10px auto;
 }
+/* COLORS */
+
+
 
 .color-container{
     width: 100%;
@@ -28,7 +33,7 @@ h2{
 .color-box{
     display: inline-block;
     width: 32%;
-    height: 100px;
+    min-height: 100px;
     text-align: center;
     margin: 20px auto;
 }
@@ -52,4 +57,37 @@ h2{
 
 .beige{
     background-color: rgb(255, 255, 226);
+}
+
+
+/* FONTS */
+
+.source-code-pro{
+    font-family: 'Source Code Pro', monospace;
+}
+
+.nunito-sans{
+    font-family:'Nunito Sans', sans-serif;
+}
+
+.poppins{
+    font-family: "Poppins", sans-serif;
+}
+
+.font-box{
+    display: inline-block;
+    width: 45%;
+}
+
+
+h3{
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
 }
