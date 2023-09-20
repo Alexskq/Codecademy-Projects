@@ -138,3 +138,21 @@ figure figcaption{
     align-items: center;
     justify-content: space-between;
 }
+
+/* Contact */
+
+#contact{
+    text-align: center;
+    height: 200px;
+    padding-top: 5px;
+}
+
+#contact h2{
+    margin-bottom: 40px;
+}
+
+/* Footer */
+
+footer{
+    margin-left: 20px;
+}
