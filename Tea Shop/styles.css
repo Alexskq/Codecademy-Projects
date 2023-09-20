@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    margin: 0px;
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    color: seashell;
+    opacity: .9;
+    
+}
+
+
+ul{
+    display: inline-flex;
+    gap:1em;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 69px;
+    border-bottom: 1px solid seashell;
+    padding: 0 10px;
+    position: sticky;
+}
+a{
+    text-decoration: underline;
+}
+a:visited{
+    color: seashell;
+}
+
+#logo{
+    height:50px;
+}
