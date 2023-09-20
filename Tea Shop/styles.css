@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: gray;
+    background-color: black;
     margin: 0px;
     font-family: Helvetica, sans-serif;
     font-size: 22px;
@@ -21,6 +21,8 @@ li{
     list-style: none;
 }
 
+/* Header */
+
 header{
     display: flex;
     justify-content: space-between;
@@ -30,7 +32,9 @@ header{
     padding: 0 10px;
     position: sticky;
 }
+
 a{
+    color: seashell;
     text-decoration: underline;
 }
 a:visited{
@@ -39,4 +43,65 @@ a:visited{
 
 #logo{
     height:50px;
+}
+
+/* Banner */
+
+h2{
+    margin: 0;
+}
+
+#banner{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg");
+    background-size: 1200px 700px;
+    background-repeat: no-repeat;
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.content-banner{
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+
+}
+
+/* Teas */
+
+#featured-tea{
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.title-tea{
+    text-align: center;
+    margin-top: 70px;
+}
+
+.teas{
+    /* position: relative; */
+  padding: 5px;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+figure{
+    margin: 0;
+}
+figure img{
+    height: 200px;
+    margin: 10px;
+    display: block;
+   
+}
+
+figure figcaption{
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
 }
