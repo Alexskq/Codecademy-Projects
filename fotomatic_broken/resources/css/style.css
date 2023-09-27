@@ -239,7 +239,12 @@ header .mobile {
   margin: 0 auto;
 }
 
+.image-container img{
+  max-width: 100%;
+}
+
 .feature h2 {
+  
   padding-bottom: .5rem;
   font-size: 2.25rem;
   font-weight: bold;
@@ -251,6 +256,10 @@ header .mobile {
   line-height: 1.2;
   font-weight: 300;
   color: #4a4a4a;
+}
+
+#features-section .content{
+  margin-top: 40px;
 }
 
 @media only screen and (max-width: 890px) {
