@@ -109,3 +109,19 @@ img{
     height: auto;
 }
 
+/* footer */
+
+footer h2{
+    padding-bottom: 10px;
+}
+
+footer p {
+    font-size: 1.25rem;
+    padding-bottom: 20px;
+}
+
+footer p:last-child{
+   margin-top: 50px;
+   padding: 0;
+}
+
