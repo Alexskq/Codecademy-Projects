@@ -46,4 +46,42 @@ li{
 .content{
 background-color: white;
 margin: auto;
+width: 100%;
+}
+
+/* Portfolio */
+
+#portfolio{
+    padding-top: 70px;
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img{
+    width: 200px;
+    margin-left: auto;
+    margin-right:auto;
+    height: auto;
+    padding: 10px;
+}
+
+.plane{
+    width:200px;
+    max-height: 200px ;
+}
+
+.item span{
+    padding: 5px;
+    min-width: 240px;
 }
