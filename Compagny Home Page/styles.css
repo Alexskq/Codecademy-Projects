@@ -1,6 +1,4 @@
-
-
-html{
+body{
     font-family: 'Lexend Mega', sans-serif;
     font-size: 22px;
     background-color: white;
@@ -11,6 +9,10 @@ html{
 
 ul{
     list-style: none;
+}
+
+a{
+    color: black;
 }
 
 a:visited{
