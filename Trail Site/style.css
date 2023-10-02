@@ -2,14 +2,19 @@ body{
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
+  background-color: #FFFFDD;
 }
 li{
   list-style: none;
 }
 
+ul{
+  padding: 0;
+}
+
 a{
   text-decoration: none;
-  color: black;
+  color: #a1a1a1;
 }
 
 /* nav-bar */
@@ -18,14 +23,51 @@ a{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-.nav-content h1{
+.nav-content h2{
   color: #016A70;
-  font-size: 1.5rem
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 li{
   display: inline-block;
-  padding: 10px
+  padding: 0 20px;
+  font-weight:bold;
+  letter-spacing: 3px;
+}
+
+nav button{
+  background-color: #016A70;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+nav button:hover {
+  background:#A2C579 ;
+  cursor: pointer;
+  color: #016A70;;
+
+}
+
+a:hover{
+  color: black;
+}
+
+/* banner */
+
+h1{
+  text-align: center;
+  font-size: 5rem;
+}
+
+.banner-info {
+  display: flex;
+  justify-content: center;
+  gap: 3rem ;
 }
