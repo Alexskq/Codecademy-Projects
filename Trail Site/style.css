@@ -3,6 +3,7 @@ body{
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   background-color: #FFFFDD;
+  min-width: 530px;
 }
 li{
   list-style: none;
@@ -144,4 +145,34 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* media queries */
+
+@media only screen and (min-width:530px) and (max-width: 700px) {
+  .nav-content h2{
+    display: none;
+  }
+
+  button{
+    display: none;
+  }
+
+  a{
+    font-size: 0.7rem;
+  }
+
+  ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .images{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+
 }
