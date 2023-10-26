@@ -53,6 +53,22 @@ const validateCred = (card) => {
     return card[card.length -1] === 10 - (sum % 10);
   };
 
+  console.log("------ First step ------")
+
+  // check invalid Cards
+  
+    const findIvalidCard = batch => {
+    // vérifier dans le nested array si valid ou pas
+    let invalidCard = [];
+    for (let i = 0 ; i < batch.length ; i++){
+        if(!validateCred(batch[i])){
+        invalidCard.push(batch[i])
+        }
+    }
+    return invalidCard
+    }
+    findIvalidCard(batch)
+
 
 
 
