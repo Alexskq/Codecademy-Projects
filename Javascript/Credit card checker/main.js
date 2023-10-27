@@ -29,14 +29,11 @@ console.log("------ First step ------")
 const validateCred = arr => {
     let numList = []
     numList.push(arr[arr.length - 1])
-    //console.log("numlist : " + numList)
-  let newArr = arr.slice(0, arr.length - 1)
-  //let reverseArr = newArr.reverse()
-  let reverseArr = [...newArr].reverse()
-  //console.log("["+reverseArr +"]"+ " : reverse")
+    let newArr = arr.slice(0, arr.length - 1)                  // prende de l'index 0 à l'avant-dernier
+    let reverseArr = [...newArr].reverse()                    // crée une copie du tableau sans modifié l'originale et l'inverse avec .reverse()
   for (let i = 0 ; i < reverseArr.length; i++){
-    if(i % 2 === 0){
-      let digit = reverseArr[i]*2; // 2
+    if(i % 2 === 0){                                         // sélectionne les index paires
+      let digit = reverseArr[i]*2; 
       //console.log(digit)
       if(digit > 9){
         digit = digit - 9
@@ -49,63 +46,61 @@ const validateCred = arr => {
     }
   }
   //console.log(numList)
-  const result = numList.reduce((accumulator, value ) => accumulator + value)
+  const sum = numList.reduce((accumulator, value ) => accumulator + value)
   //console.log(result)
-  const checked = result % 10 === 0
+  const checked = sum % 10 === 0
+
   console.log(checked)
   return checked
  
 }
-validateCred(mystery5)
+validateCred(invalid1)                                  // return true or false ( valid : invalid)
 console.log("------ Second step ------")
 
 const findInvalidCards = batch => {
-  // vérifier dans le nested array si valid ou pas
   let invalidCard = [];
   for (let i = 0 ; i < batch.length ; i++){
-    if(!validateCred(batch[i])){
+    if(!validateCred(batch[i])){                        // si validateCard == false alors il le push dans le tableau
       invalidCard.push(batch[i])
       }
   }
   //console.log(invalidCard)
-  return invalidCard // contient toutes les cards invalident
+  console.log("---- tab -------")
+  return invalidCard                                    // contient toutes les cards invalident
+
 }
 
-console.log(findInvalidCards([valid1, valid2, valid3, valid4, valid5]));// Shouldn't print anything
-console.log(findInvalidCards([invalid1, invalid2, invalid3, invalid4, invalid5])); // Should print all of the numbers
+//console.log(findInvalidCards([valid1, valid2, valid3, valid4, valid5]));// Shouldn't print anything
+//console.log(findInvalidCards([invalid1, invalid2, invalid3, invalid4, invalid5])); // Should print all of the numbers
 console.log(findInvalidCards(batch)); // Test what the mystery numbers are
 console.log("---------- Third Step ----------")
 
 const idInvalidCardCompanies = (invalidBatch) => {
-  const companies = []
-  for (let i = 0; i < invalidBatch.length; i ++){
+  const companies = [];
+  for (let i = 0; i < invalidBatch.length; i++) {
     switch (invalidBatch[i][0]) {
-      case 3 :
-        if (companies.indexOf('Amex') === -1){
-        companies.push("Amex")
-        }
-      break;
-      case 4 :
-        if (companies.indexOf('Visa') === -1){
-          companies.push("Visa")
-        }
+      case 3:
+        companies.push("Amex (American Express)");
         break;
-      case 5 :
-        if (companies.indexOf('Mastercard') === -1){
-          companies.push("Mastercard")
-        }
+      case 4:
+        companies.push("Visa");
         break;
-      case 6 :
-        if (companies.indexOf('Discover') === -1){
-          companies.push("Discover")
-        }
+      case 5:
+        companies.push("Mastercard");
         break;
-      default: 
-        console.log("Compagny not found")
+      case 6:
+        companies.push("Discover");
+        break;
+      default:
+        companies.push("Company not found");
     }
-    return companies
+  }
+  const uniqueCompanies = [...new Set(companies)];   // Set est une structure de données en JavaScript qui ne permet pas de doublons.
+                                                    //[...new Set(companies)] crée un nouvel ensemble (Set) en utilisant le contenu de companies 
+                                                    //comme source. Ensuite, le spread operator ([...]) est utilisé pour convertir l'ensemble en tableau.
+  return uniqueCompanies;
 }
-}
-console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
-console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
+
+//console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
+//console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
 console.log(idInvalidCardCompanies(batch)); // Find out which companies have mailed out invalid cards
