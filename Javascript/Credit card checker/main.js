@@ -104,3 +104,45 @@ const idInvalidCardCompanies = (invalidBatch) => {
 //console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
 //console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
 console.log(idInvalidCardCompanies(batch)); // Find out which companies have mailed out invalid cards
+
+
+// ---------------- étapes pour vérifier un numéro -------------- 
+//         1 - entrer une suite de numéro
+//         2 - vérifier si l'input est vide ou pas
+//         2 - transformer la string en interger puis la transformer dans un tableau
+//         3 - vérifier si ce tableau renvoi : valide ou non
+//         4 - si le numéro est invalide, trouver l'entreprise qui a envoyé cette carte
+//         5 - afficher le nombre d'entreprises qui ont envoyé des cartes invalides
+
+const num = "49298165439232848"
+
+const stringToArray = str => {
+  const input = console.log('Entrez le numéro de carte') // remplacer console.log / prompt pour affichage
+
+  if(input === null){
+    alert("Vous n'avez rien saisi")
+    return [];
+  }
+
+  let arrayInput = Array.from(str).map(Number);
+  return arrayInput
+}
+
+console.log(stringToArray(num))
+
+
+const checkSteps = arr => {
+  //  * si la fonction validateCard renvoi true on renvoi numéro de carte valide 
+  //  * si ça renvoi false, on passe dans la carte dans la fonction idInvalidCardCompany
+  // * on affiche un message " numéro de carte (nom de l'entreprise) invalide"
+  if(validateCred(arr)){
+    return `Numéro de carte ${arr[0]}... valide`;
+    } else{
+      return "numéro de carte invalide"
+    }
+
+}
+
+console.log(checkSteps(stringToArray(num)));
+
+  
