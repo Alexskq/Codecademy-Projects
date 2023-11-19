@@ -43,46 +43,57 @@ function generateRandomNumber(num) {
   return Math.floor(Math.random() * num);
 }
 
-// crée une boucle pour itérer sur Collection et qui récupérer au hasard un élement de chaque clés
 function randomGenerator(collection) {
   let result = [];
-  for (let key in collection) {
-    const randomIndex = generateRandomNumber(collection[key].length);
-    switch (key) {
-      case "motivation":
-        result.push(collection[key][randomIndex]);
-        break;
-      case "perseverance":
-        result.push(collection[key][randomIndex]);
-        break;
-      case "ambition":
-        result.push(collection[key][randomIndex]);
-        break;
 
-      default:
-        console.log("not found");
-        break;
-    }
-  }
+  // Choisissez une clé aléatoire dans l'objet collection
+  const randomKeyIndex = generateRandomNumber(Object.keys(collection).length);
+  const randomKey = Object.keys(collection)[randomKeyIndex];
+
+  // Choisissez un index aléatoire pour la clé sélectionnée
+  const randomIndex = generateRandomNumber(collection[randomKey].length);
+
+  // Ajoutez le message correspondant à la clé sélectionnée dans le résultat
+  result.push(collection[randomKey][randomIndex]);
+
   console.log(result);
   return result;
 }
 
 const sentence = randomGenerator(collection).join("\n");
-// const formatted = randomGenerator(collection).join(" ");
-
 console.log(sentence);
 
-//for (let key in collection) {
-//     if (key === "signInfo") {
-//       result[key] =
-//         collection[key][Math.floor(Math.random() * collection[key].length)];
-//     } else if (key === "fortuneOutput") {
-//       result[key] =
-//         collection[key][Math.floor(Math.random() * collection[key].length)];
-//     } else if (key === "advice") {
-//       result[key] =
-//         collection[key][Math.floor(Math.random() * collection[key].length)];
+// ? fournit un message de chaque clés
+
+// // crée une boucle pour itérer sur Collection et qui récupérer au hasard un élement de chaque clés
+// function randomGenerator(collection) {
+//   let result = [];
+//   for (let key in collection) {
+//     const randomIndex = generateRandomNumber(collection[key].length);
+//     // choisir aléatoirement entre une des clés de collections
+
+//     const chooseKey = generateRandomNumber()
+//     switch (key) {
+//       case "motivation":
+//         result.push(collection[key][randomIndex]);
+//         break;
+//       case "perseverance":
+//         result.push(collection[key][randomIndex]);
+//         break;
+//       case "ambition":
+//         result.push(collection[key][randomIndex]);
+//         break;
+
+//       default:
+//         console.log("not found");
+//         break;
 //     }
 //   }
+//   console.log(result);
 //   return result;
+// }
+
+// const sentence = randomGenerator(collection).join("\n");
+// // const formatted = randomGenerator(collection).join(" ");
+
+// console.log(sentence);
