@@ -1,9 +1,9 @@
 import React from "react";
 
 function Header(props) {
-  returnr(
+  return (
     <>
-      <img src={props.profilImge} />
+      <img src={props.profilImg} />
       <h1>{props.username}</h1>
     </>
   );
